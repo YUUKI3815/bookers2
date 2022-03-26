@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Bookers2</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-　　<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://kit.fontawesome.com/a48e69d690.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <header>
-  </header>
-<%= yield %>
+
 <main>
   <p id="notice"></p>
   <div class="container px-5 px-sm-0">
@@ -35,9 +20,10 @@
           </tr>
         </thead>
       </table>
-        <%= link_to  edit_user_path(@user.id) do %>
-        <div class="btn btn-primary btn-lg active" role="button" aria-pressed="true">edit</div>
+      <div class= "row">
+        <%= link_to  edit_user_path(@user.id), class: "btn btn-outline-secondary btn-block fa-solid fa-user-gear" do %>
         <% end %>
+        </div>
       <h2>New book</h2>
       <% if @book.errors.any? %>
        <%= @book.errors.count %>errors prohibited this obj from being saved:
@@ -71,7 +57,7 @@
      <td><%= image_tag user.get_profile_image(100,100) %></td>
      <td><%= user.name %></td>
      <td><%= link_to "show", user_path(user.id) %></td>
-   </tr> 
+   </tr>
    <% end %>
   </tbody>
 </table>
