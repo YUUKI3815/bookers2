@@ -8,7 +8,7 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th><%= image_tag @user.get_profile_image(100,100) %></th>
+            <th><%= image_tag @user.get_profile_image(63,63) %></th>
           </tr>
           <tr>
             <th>name</th>
@@ -38,7 +38,7 @@
       <%= f.text_field :title %>
     <h4>Opinion</h4>
       <%= f.text_area :body %>
-    <%= f.submit 'Create Book' %>
+    <%= f.submit 'Create Book', class: "button btn btn-success" %>
   <% end %>
       </div>
       <div class="col-md-8 offset-md-1">
@@ -56,7 +56,7 @@
   <tbody>
     <tr>
       <td><%= link_to user_path(book.user.id) do %>
-  　　<%= image_tag book.user.get_profile_image(100,100) %>
+  　　<%= image_tag book.user.get_profile_image(40,40) %>
  　　　 <% end %>
   </td>
       <td><%= link_to book_path(book.id) do %>
