@@ -2,12 +2,11 @@
 <html>
   <head>
     <title>Bookers2</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://kit.fontawesome.com/a48e69d690.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
@@ -24,38 +23,38 @@
       <% if user_signed_in? %>
       <li>
          <%= link_to user_path(current_user), class: 'text-light' do %>
-       <i class= 'fa-solid fa-house text-light'></i>
+       <i class= 'fas fa-home text-light'></i>
         Home
         <% end %>
       </li>
       <li>
       <%= link_to users_path, class: 'text-light' do %>
-          <i class='fa-solid fa-users text-light'></i>
+          <i class="fas fa-users tekt-light"></i>
           Users
       <% end %>
       </li>
       <li>
        <%= link_to books_path, class: 'text-light' do %>
-          <i class= 'fa-solid fa-book-open text-light'></i>
+          <i class= 'fas fa-book-open text-light'></i>
           Books
        <% end %>
       </li>
       <li>
         <%= link_to destroy_user_session_path, method: :delete, class: 'text-light' do %>
-        <i class= 'fa-solid fa-arrow-right-from-bracket text_light'></i>
+        <i class= 'fas fa-sign-out-alt text_light'></i>
         Log out
         <% end %>
      </li>
       <% else %>
       <li>
         <%= link_to root_path, class: 'text-light' do %>
-          <i class= 'fa-solid fa-house text-light'></i>
+          <i class= 'fas fa-home text-light'></i>
           Home
         <% end %>
       </li>
       <li>
         <%= link_to about_path, class: 'text-light' do %>
-          <i class= 'fa-solid fa-link text-light'></i>
+          <i class= 'fas fa-link text-light'></i>
           About
         <% end %>
       </li>
@@ -66,7 +65,7 @@
         <% end %>
       </li>
        <%= link_to new_user_session_path, class: 'text-light' do %>
-       <i class= 'fa-solid fa-right-to-bracket'></i>
+       <i class= 'fas fa-sign-in-alt text-light'></i>
          Log in
         <% end %>
       </li>
@@ -76,7 +75,14 @@
     </div>
     </nav>
   </header>
-<%= yield %>
+<main>
+  <% if flash[:notice] %>
+     <p id="notice">
+       <%= flash[:notice] %>
+     </p>
+   <% end %>
+   <%= yield %>
+</main>
 <footer>
   <div class="container mt-5">
     <div class="row">

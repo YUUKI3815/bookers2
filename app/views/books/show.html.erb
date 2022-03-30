@@ -1,13 +1,9 @@
 <main>
-  <% if flash[:notice] %>
-     <p id="notice">
-       <%= flash[:notice] %>
-     </p>
-   <% end %>
   <div class="container px-5 px-sm-0">
     <div class="row">
    <%= render 'users/list', user: @user, book: @new_book %>
-      <div class="col-md-8 offset-md-1">
+   </div>
+   <div class="col-md-8 offset-md-1">
 <h2>Book detail</h2>
 <table class="table">
   <tbody>
@@ -18,7 +14,10 @@
    <%= @book.user.name %>
    <% end %>
    </td>
-  <td><%= @book.title %></td>
+  <td>
+    <%= link_to book_path(@book) do %>
+    <%= @book.title %>
+    <% end %></td>
   <td><%= @book.body %></td>
   <td><% if @book.user == current_user %>
     <%= link_to "Edit", edit_book_path(@book.id), class: "button btn btn-success" %>
@@ -35,7 +34,6 @@
 </div>
 </div>
 </main>
-</html>
 
 
 

@@ -1,13 +1,9 @@
 <main>
- <% if flash[:notice] %>
-     <p id="notice">
-       <%= flash[:notice] %>
-     </p>
-   <% end %>
   <div class="container px-5 px-sm-0">
     <div class="row">
    <%= render 'list', user: @user, book: @book %>
-      <div class="col-md-8 offset-md-1">
+     </div>
+<div class="col-md-8 offset-md-1">
 <h2>Books</h2>
 <table class="table">
   <thead>
@@ -38,4 +34,3 @@
 </div>
 </div>
 </main>
-</html>
