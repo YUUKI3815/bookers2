@@ -6,7 +6,7 @@
       <th>image</th>
       <th>name</th>
     </tr>
-      <% @records.each do |user| %>
+      <% @users.each do |user| %>
         <tr>
           <td><%= image_tag user.get_profile_image(100,100) %></td>
           <td><%= user.name %></td>
@@ -22,7 +22,7 @@
       <th>Opinion</th>
       <th></th>
     </tr>
-      <% @records.each do |book| %>
+      <% @books.each do |book| %>
         <tr>
           <td>
            <%= link_to user_path(book.user.id) do %>
